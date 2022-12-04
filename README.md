@@ -53,9 +53,10 @@ spplot(climate_sp,"bio_1", col.regions=colors, sp.layout=pols, pch=20, cex=1)
 ```
 ![pointplot](imgs/../img/pointplot.png)
 ### Do interpolation
-Firstly, convert point data to Voronor geometry.
+Firstly, convert point data to Voronor geometry and merge geometry to world map.
 ```R
 v <- voronoi(climate_sp)
+v1<-intersect(v,worldSP)#
 ```
 Secondly, set raster number of word map.
 ```R
@@ -64,7 +65,7 @@ values(blank_raster)<-1
 bound_raster<-rasterize(worldSP,blank_raster)
 bound_raster[!(is.na(bound_raster))] <- 1
 ```
-Finally, projecting V raster to 500*500 world map raster and making "inverse distance weighting" interpolation.
+Finally, project V raster to 500*500 world map raster and do "inverse distance weighting" interpolation.
 ```R
 #project V1 raster to 500*500 raster
 vr <- rasterize(v1,bound_raster,i)
