@@ -66,3 +66,5 @@ spplot(idwmask, colorkey = FALSE,legend = list(inside = legendArgs),col.regions=
 
 
 
+
+
