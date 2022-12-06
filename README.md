@@ -1,5 +1,5 @@
 # Spatial_interpolation_and_Visualization
-This repo is a simple and fast spatial interpolation tutorial in R
+This repo is a simple and fast spatial interpolation tutorial in R.
 ## Packages
 ```
 library(data.table)
